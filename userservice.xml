@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+	<context id="MBG" targetRuntime="MyBatis3">
+
+		<!-- <plugin type="org.ala.generator.plugin.MySqlPagePlugin"></plugin> -->
+
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+			<!-- 是否生成注释代时间戳 -->
+			<property name="suppressDate" value="false" />
+			<property name="addRemarkComments" value="true"/>
+		</commentGenerator>
+
+		<!-- 数据库配置 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1/weishengming_db?characterEncoding=utf8&amp;allowMultiQueries=true&amp;useInformationSchema=true" userId="root" password="">
+		</jdbcConnection>
+
+		<!-- <javaTypeResolver> <property name="forceBigDecimals" value="true" /> </javaTypeResolver> -->
+
+		<!-- model配置 -->
+		<javaModelGenerator targetPackage="com.weishengming.userservice.dao.entities" targetProject="./MyBatisCode">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="false" />
+			<fieldAnnotation name="jsonDeserializer" value="com.fasterxml.jackson.databind.annotation.JsonSerialize(using = JacksonDateTimeSerializer.class)" importType="com.weishengming.utils.jackson.JacksonDateTimeSerializer" targetType="java.util.Date"/>
+			<fieldAnnotation name="jsonSerializer" value="com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = JacksonDateDeserializer.class)" importType="com.weishengming.utils.jackson.JacksonDateDeserializer" targetType="java.util.Date"/>
+		</javaModelGenerator>
+
+		<!-- xml配置文件 -->
+		<sqlMapGenerator targetPackage="com.weishengming.userservice.dao.xml" targetProject="./MyBatisCode">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!--接口 -->
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.weishengming.userservice.dao.mapper" targetProject="./MyBatisCode">
+			<property name="enableSubPackages" value="true" />
+			<modifyDbAnnotation name="masterDataSource" value="com.weishengming.userservice.datasources.annotations.MasterDataSource"/>
+		</javaClientGenerator>
+
+		<!-- tableName是要生成映射的表明， domainObjectName是生成映射的实体类名 -->
+	 
+        
+		<!--
+		<table tableName="t_jpush_msg" domainObjectName="JPushMsg">
+			<generatedKey column="RecordId" sqlStatement="MySql" identity="true" />
+		</table>
+		-->
+		<table tableName="t_user" domainObjectName="User">
+			<generatedKey column="RecordId" sqlStatement="MySql" identity="true" />
+		</table>
+
+		 <!-- 
+		<table tableName="t_jpush_msg_order_record" domainObjectName="JPushMsgOrderRecord">
+			<generatedKey column="RecordId" sqlStatement="MySql" identity="true" />
+		</table>
+ 
+		<table tableName="t_jpush_msg_order_tmplate" domainObjectName="JPushMsgOrderTmplate">
+			<generatedKey column="TmplateId" sqlStatement="MySql" identity="true" />
+		</table>
+	   
+		<table tableName="t_jpush_msg_sys_record" domainObjectName="JPushMsgSysRecord">
+			<generatedKey column="RecordId" sqlStatement="MySql" identity="true" />
+		</table>
+		
+		<table tableName="t_jpush_msg_sys_tmplate" domainObjectName="JPushMsgSysTmplate">
+			<generatedKey column="TmplateId" sqlStatement="MySql" identity="true" />
+		</table>
+	  
+		 
+		<table tableName="t_jpush_msg_tmplate_tag" domainObjectName="JPushMsgTmplateTag">
+			<generatedKey column="RecordId" sqlStatement="MySql" identity="true" />
+		</table>
+	     
+		<table tableName="t_jpush_user" domainObjectName="JPushUser">
+			<generatedKey column="RecordId" sqlStatement="MySql" identity="true" />
+		</table>
+		-->
+		<!--
+		<table tableName="t_jpush_user_tag" domainObjectName="JPushUserTag">
+			<generatedKey column="RecordId" sqlStatement="MySql" identity="true" />
+		</table>
+         -->
+		<!--
+		<table tableName="T_Merchants_Announcement" domainObjectName="MerchantsAnnouncement">
+			<generatedKey column="AutoId" sqlStatement="MySql" identity="true" />
+		</table>
+		<table tableName="T_Merchants_Notice" domainObjectName="MerchantsNotice">
+			<generatedKey column="AutoId" sqlStatement="MySql" identity="true" />
+		</table>
+		<table tableName="T_Merchants_Order_00" domainObjectName="MerchantsOrder" tableIndexSuffix="00" />
+		<table tableName="T_Mq_Consume_Retry" domainObjectName="MqConsumeRetry" />
+		<table tableName="T_Mq_Send_Record" domainObjectName="MqSendRecordEntity">
+			<generatedKey column="RecordId" sqlStatement="MySql" identity="true" />
+		</table>
+		<table tableName="T_Order_201601" domainObjectName="Order" tableIndexSuffix="201601"/>
+		<table tableName="T_Order_Pay_Record_00" domainObjectName="OrderPayRecord" tableIndexSuffix="00"/>
+		<table tableName="T_User_Info" domainObjectName="UserInfo" />
+		<table tableName="T_User_Order_00" domainObjectName="UserOrder" tableIndexSuffix="00"/>
+		<table tableName="T_Staff_Sales" domainObjectName="StaffSales" />
+		-->
+	</context>
+</generatorConfiguration>
