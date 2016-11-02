@@ -1,4 +1,4 @@
-package com.weishengming.mannaservice.dao.entities;
+package com.weishengming.lifeservice.dao.entities;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -6,10 +6,10 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * manna表
- * T_Manna_Record
+ * 文章表
+ * t_article
  */
-public class MannaRecordExample {
+public class ArticleExample {
     /**
      * 顺序排序
      */
@@ -21,32 +21,37 @@ public class MannaRecordExample {
     public static final String ORDERBYDIRECTION_DESC = "desc";
 
     /**
-     * 配置标识
+     * 记录标识
      */
     public static final String FIELD_RECORDID = "RecordId";
 
     /**
-     * 类型
+     * 文章Id
      */
-    public static final String FIELD_TYPE = "Type";
+    public static final String FIELD_ARTICLEID = "ArticleId";
 
     /**
-     * 配置码
+     * 发布人Id
      */
-    public static final String FIELD_CODE = "Code";
+    public static final String FIELD_USERID = "UserId";
 
     /**
-     * 配置名称
+     * 图片地址
      */
-    public static final String FIELD_NAME = "Name";
+    public static final String FIELD_IMGSRC = "ImgSrc";
 
     /**
-     * 配置值
+     * 标题
      */
-    public static final String FIELD_VALUE = "Value";
+    public static final String FIELD_TITLE = "Title";
 
     /**
-     * 状态
+     * 内容
+     */
+    public static final String FIELD_CONTENT = "Content";
+
+    /**
+     * 文章状态
      */
     public static final String FIELD_STATUS = "Status";
 
@@ -61,116 +66,116 @@ public class MannaRecordExample {
     public static final String FIELD_LASTMODIFYTIME = "LastModifyTime";
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     protected Integer offset;
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     protected Integer size;
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     protected String orderByClause;
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     protected boolean distinct;
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     protected List<Criteria> oredCriteria;
 
     /**
-     * T_Manna_Record
+     * t_article
      */
-    public MannaRecordExample() {
+    public ArticleExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     public void setOrderByClause(String orderByClause) {
         this.orderByClause = orderByClause;
     }
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     public void setOrderByClause(OrderBy orderBy) {
         this.orderByClause = orderBy.toString();
     }
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     public String getOrderByClause() {
         return orderByClause;
     }
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     public void setDistinct(boolean distinct) {
         this.distinct = distinct;
     }
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     public boolean isDistinct() {
         return distinct;
     }
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     public Integer getOffset() {
         return offset;
     }
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     public void setSize(Integer size) {
         this.size = size;
     }
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     public Integer getSize() {
         return size;
     }
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     public List<Criteria> getOredCriteria() {
         return oredCriteria;
     }
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     public void or(Criteria criteria) {
         oredCriteria.add(criteria);
     }
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     public Criteria or() {
         Criteria criteria = createCriteriaInternal();
@@ -179,7 +184,7 @@ public class MannaRecordExample {
     }
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     public Criteria createCriteria() {
         Criteria criteria = createCriteriaInternal();
@@ -190,7 +195,7 @@ public class MannaRecordExample {
     }
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     protected Criteria createCriteriaInternal() {
         Criteria criteria = new Criteria();
@@ -198,7 +203,7 @@ public class MannaRecordExample {
     }
 
     /**
-     * T_Manna_Record
+     * t_article
      */
     public void clear() {
         oredCriteria.clear();
@@ -207,8 +212,8 @@ public class MannaRecordExample {
     }
 
     /**
-     * manna表
-     * T_Manna_Record
+     * 文章表
+     * t_article
      */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
@@ -260,7 +265,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 配置标识
+         * 记录标识
          */
         public Criteria andRecordIdIsNull() {
             addCriterion("RecordId is null");
@@ -268,7 +273,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 配置标识
+         * 记录标识
          */
         public Criteria andRecordIdIsNotNull() {
             addCriterion("RecordId is not null");
@@ -276,7 +281,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 配置标识
+         * 记录标识
          */
         public Criteria andRecordIdEqualTo(Long value) {
             addCriterion("RecordId =", value, "recordId", false);
@@ -284,7 +289,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 配置标识
+         * 记录标识
          */
         public Criteria andRecordIdNotEqualTo(Long value) {
             addCriterion("RecordId <>", value, "recordId", false);
@@ -292,7 +297,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 配置标识
+         * 记录标识
          */
         public Criteria andRecordIdGreaterThan(Long value) {
             addCriterion("RecordId >", value, "recordId", false);
@@ -300,7 +305,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 配置标识
+         * 记录标识
          */
         public Criteria andRecordIdGreaterThanOrEqualTo(Long value) {
             addCriterion("RecordId >=", value, "recordId", false);
@@ -308,7 +313,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 配置标识
+         * 记录标识
          */
         public Criteria andRecordIdLessThan(Long value) {
             addCriterion("RecordId <", value, "recordId", false);
@@ -316,7 +321,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 配置标识
+         * 记录标识
          */
         public Criteria andRecordIdLessThanOrEqualTo(Long value) {
             addCriterion("RecordId <=", value, "recordId", false);
@@ -324,7 +329,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 配置标识
+         * 记录标识
          */
         public Criteria andRecordIdIn(List<Long> values) {
             addCriterion("RecordId in", values, "recordId", false);
@@ -332,7 +337,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 配置标识
+         * 记录标识
          */
         public Criteria andRecordIdNotIn(List<Long> values) {
             addCriterion("RecordId not in", values, "recordId", false);
@@ -340,7 +345,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 配置标识
+         * 记录标识
          */
         public Criteria andRecordIdBetween(Long value1, Long value2) {
             addCriterion("RecordId between", value1, value2, "recordId");
@@ -348,7 +353,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 配置标识
+         * 记录标识
          */
         public Criteria andRecordIdNotBetween(Long value1, Long value2) {
             addCriterion("RecordId not between", value1, value2, "recordId");
@@ -356,439 +361,567 @@ public class MannaRecordExample {
         }
 
         /**
-         * 类型
+         * 文章Id
          */
-        public Criteria andTypeIsNull() {
-            addCriterion("Type is null");
+        public Criteria andArticleIdIsNull() {
+            addCriterion("ArticleId is null");
             return (Criteria) this;
         }
 
         /**
-         * 类型
+         * 文章Id
          */
-        public Criteria andTypeIsNotNull() {
-            addCriterion("Type is not null");
+        public Criteria andArticleIdIsNotNull() {
+            addCriterion("ArticleId is not null");
             return (Criteria) this;
         }
 
         /**
-         * 类型
+         * 文章Id
          */
-        public Criteria andTypeEqualTo(Integer value) {
-            addCriterion("Type =", value, "type", false);
+        public Criteria andArticleIdEqualTo(String value) {
+            addCriterion("ArticleId =", value, "articleId", false);
             return (Criteria) this;
         }
 
         /**
-         * 类型
+         * 文章Id
          */
-        public Criteria andTypeNotEqualTo(Integer value) {
-            addCriterion("Type <>", value, "type", false);
+        public Criteria andArticleIdNotEqualTo(String value) {
+            addCriterion("ArticleId <>", value, "articleId", false);
             return (Criteria) this;
         }
 
         /**
-         * 类型
+         * 文章Id
          */
-        public Criteria andTypeGreaterThan(Integer value) {
-            addCriterion("Type >", value, "type", false);
+        public Criteria andArticleIdGreaterThan(String value) {
+            addCriterion("ArticleId >", value, "articleId", false);
             return (Criteria) this;
         }
 
         /**
-         * 类型
+         * 文章Id
          */
-        public Criteria andTypeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("Type >=", value, "type", false);
+        public Criteria andArticleIdGreaterThanOrEqualTo(String value) {
+            addCriterion("ArticleId >=", value, "articleId", false);
             return (Criteria) this;
         }
 
         /**
-         * 类型
+         * 文章Id
          */
-        public Criteria andTypeLessThan(Integer value) {
-            addCriterion("Type <", value, "type", false);
+        public Criteria andArticleIdLessThan(String value) {
+            addCriterion("ArticleId <", value, "articleId", false);
             return (Criteria) this;
         }
 
         /**
-         * 类型
+         * 文章Id
          */
-        public Criteria andTypeLessThanOrEqualTo(Integer value) {
-            addCriterion("Type <=", value, "type", false);
+        public Criteria andArticleIdLessThanOrEqualTo(String value) {
+            addCriterion("ArticleId <=", value, "articleId", false);
             return (Criteria) this;
         }
 
         /**
-         * 类型
+         * 文章Id
          */
-        public Criteria andTypeIn(List<Integer> values) {
-            addCriterion("Type in", values, "type", false);
+        public Criteria andArticleIdLike(String value) {
+            addCriterion("ArticleId like", value, "articleId", false);
             return (Criteria) this;
         }
 
         /**
-         * 类型
+         * 文章Id
          */
-        public Criteria andTypeNotIn(List<Integer> values) {
-            addCriterion("Type not in", values, "type", false);
+        public Criteria andArticleIdNotLike(String value) {
+            addCriterion("ArticleId not like", value, "articleId", false);
             return (Criteria) this;
         }
 
         /**
-         * 类型
+         * 文章Id
          */
-        public Criteria andTypeBetween(Integer value1, Integer value2) {
-            addCriterion("Type between", value1, value2, "type");
+        public Criteria andArticleIdIn(List<String> values) {
+            addCriterion("ArticleId in", values, "articleId", false);
             return (Criteria) this;
         }
 
         /**
-         * 类型
+         * 文章Id
          */
-        public Criteria andTypeNotBetween(Integer value1, Integer value2) {
-            addCriterion("Type not between", value1, value2, "type");
+        public Criteria andArticleIdNotIn(List<String> values) {
+            addCriterion("ArticleId not in", values, "articleId", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置码
+         * 文章Id
          */
-        public Criteria andCodeIsNull() {
-            addCriterion("Code is null");
+        public Criteria andArticleIdBetween(String value1, String value2) {
+            addCriterion("ArticleId between", value1, value2, "articleId");
             return (Criteria) this;
         }
 
         /**
-         * 配置码
+         * 文章Id
          */
-        public Criteria andCodeIsNotNull() {
-            addCriterion("Code is not null");
+        public Criteria andArticleIdNotBetween(String value1, String value2) {
+            addCriterion("ArticleId not between", value1, value2, "articleId");
             return (Criteria) this;
         }
 
         /**
-         * 配置码
+         * 发布人Id
          */
-        public Criteria andCodeEqualTo(String value) {
-            addCriterion("Code =", value, "code", false);
+        public Criteria andUserIdIsNull() {
+            addCriterion("UserId is null");
             return (Criteria) this;
         }
 
         /**
-         * 配置码
+         * 发布人Id
          */
-        public Criteria andCodeNotEqualTo(String value) {
-            addCriterion("Code <>", value, "code", false);
+        public Criteria andUserIdIsNotNull() {
+            addCriterion("UserId is not null");
             return (Criteria) this;
         }
 
         /**
-         * 配置码
+         * 发布人Id
          */
-        public Criteria andCodeGreaterThan(String value) {
-            addCriterion("Code >", value, "code", false);
+        public Criteria andUserIdEqualTo(String value) {
+            addCriterion("UserId =", value, "userId", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置码
+         * 发布人Id
          */
-        public Criteria andCodeGreaterThanOrEqualTo(String value) {
-            addCriterion("Code >=", value, "code", false);
+        public Criteria andUserIdNotEqualTo(String value) {
+            addCriterion("UserId <>", value, "userId", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置码
+         * 发布人Id
          */
-        public Criteria andCodeLessThan(String value) {
-            addCriterion("Code <", value, "code", false);
+        public Criteria andUserIdGreaterThan(String value) {
+            addCriterion("UserId >", value, "userId", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置码
+         * 发布人Id
          */
-        public Criteria andCodeLessThanOrEqualTo(String value) {
-            addCriterion("Code <=", value, "code", false);
+        public Criteria andUserIdGreaterThanOrEqualTo(String value) {
+            addCriterion("UserId >=", value, "userId", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置码
+         * 发布人Id
          */
-        public Criteria andCodeLike(String value) {
-            addCriterion("Code like", value, "code", false);
+        public Criteria andUserIdLessThan(String value) {
+            addCriterion("UserId <", value, "userId", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置码
+         * 发布人Id
          */
-        public Criteria andCodeNotLike(String value) {
-            addCriterion("Code not like", value, "code", false);
+        public Criteria andUserIdLessThanOrEqualTo(String value) {
+            addCriterion("UserId <=", value, "userId", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置码
+         * 发布人Id
          */
-        public Criteria andCodeIn(List<String> values) {
-            addCriterion("Code in", values, "code", false);
+        public Criteria andUserIdLike(String value) {
+            addCriterion("UserId like", value, "userId", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置码
+         * 发布人Id
          */
-        public Criteria andCodeNotIn(List<String> values) {
-            addCriterion("Code not in", values, "code", false);
+        public Criteria andUserIdNotLike(String value) {
+            addCriterion("UserId not like", value, "userId", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置码
+         * 发布人Id
          */
-        public Criteria andCodeBetween(String value1, String value2) {
-            addCriterion("Code between", value1, value2, "code");
+        public Criteria andUserIdIn(List<String> values) {
+            addCriterion("UserId in", values, "userId", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置码
+         * 发布人Id
          */
-        public Criteria andCodeNotBetween(String value1, String value2) {
-            addCriterion("Code not between", value1, value2, "code");
+        public Criteria andUserIdNotIn(List<String> values) {
+            addCriterion("UserId not in", values, "userId", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置名称
+         * 发布人Id
          */
-        public Criteria andNameIsNull() {
-            addCriterion("Name is null");
+        public Criteria andUserIdBetween(String value1, String value2) {
+            addCriterion("UserId between", value1, value2, "userId");
             return (Criteria) this;
         }
 
         /**
-         * 配置名称
+         * 发布人Id
          */
-        public Criteria andNameIsNotNull() {
-            addCriterion("Name is not null");
+        public Criteria andUserIdNotBetween(String value1, String value2) {
+            addCriterion("UserId not between", value1, value2, "userId");
             return (Criteria) this;
         }
 
         /**
-         * 配置名称
+         * 图片地址
          */
-        public Criteria andNameEqualTo(String value) {
-            addCriterion("Name =", value, "name", false);
+        public Criteria andImgSrcIsNull() {
+            addCriterion("ImgSrc is null");
             return (Criteria) this;
         }
 
         /**
-         * 配置名称
+         * 图片地址
          */
-        public Criteria andNameNotEqualTo(String value) {
-            addCriterion("Name <>", value, "name", false);
+        public Criteria andImgSrcIsNotNull() {
+            addCriterion("ImgSrc is not null");
             return (Criteria) this;
         }
 
         /**
-         * 配置名称
+         * 图片地址
          */
-        public Criteria andNameGreaterThan(String value) {
-            addCriterion("Name >", value, "name", false);
+        public Criteria andImgSrcEqualTo(String value) {
+            addCriterion("ImgSrc =", value, "imgSrc", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置名称
+         * 图片地址
          */
-        public Criteria andNameGreaterThanOrEqualTo(String value) {
-            addCriterion("Name >=", value, "name", false);
+        public Criteria andImgSrcNotEqualTo(String value) {
+            addCriterion("ImgSrc <>", value, "imgSrc", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置名称
+         * 图片地址
          */
-        public Criteria andNameLessThan(String value) {
-            addCriterion("Name <", value, "name", false);
+        public Criteria andImgSrcGreaterThan(String value) {
+            addCriterion("ImgSrc >", value, "imgSrc", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置名称
+         * 图片地址
          */
-        public Criteria andNameLessThanOrEqualTo(String value) {
-            addCriterion("Name <=", value, "name", false);
+        public Criteria andImgSrcGreaterThanOrEqualTo(String value) {
+            addCriterion("ImgSrc >=", value, "imgSrc", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置名称
+         * 图片地址
          */
-        public Criteria andNameLike(String value) {
-            addCriterion("Name like", value, "name", false);
+        public Criteria andImgSrcLessThan(String value) {
+            addCriterion("ImgSrc <", value, "imgSrc", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置名称
+         * 图片地址
          */
-        public Criteria andNameNotLike(String value) {
-            addCriterion("Name not like", value, "name", false);
+        public Criteria andImgSrcLessThanOrEqualTo(String value) {
+            addCriterion("ImgSrc <=", value, "imgSrc", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置名称
+         * 图片地址
          */
-        public Criteria andNameIn(List<String> values) {
-            addCriterion("Name in", values, "name", false);
+        public Criteria andImgSrcLike(String value) {
+            addCriterion("ImgSrc like", value, "imgSrc", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置名称
+         * 图片地址
          */
-        public Criteria andNameNotIn(List<String> values) {
-            addCriterion("Name not in", values, "name", false);
+        public Criteria andImgSrcNotLike(String value) {
+            addCriterion("ImgSrc not like", value, "imgSrc", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置名称
+         * 图片地址
          */
-        public Criteria andNameBetween(String value1, String value2) {
-            addCriterion("Name between", value1, value2, "name");
+        public Criteria andImgSrcIn(List<String> values) {
+            addCriterion("ImgSrc in", values, "imgSrc", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置名称
+         * 图片地址
          */
-        public Criteria andNameNotBetween(String value1, String value2) {
-            addCriterion("Name not between", value1, value2, "name");
+        public Criteria andImgSrcNotIn(List<String> values) {
+            addCriterion("ImgSrc not in", values, "imgSrc", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置值
+         * 图片地址
          */
-        public Criteria andValueIsNull() {
-            addCriterion("Value is null");
+        public Criteria andImgSrcBetween(String value1, String value2) {
+            addCriterion("ImgSrc between", value1, value2, "imgSrc");
             return (Criteria) this;
         }
 
         /**
-         * 配置值
+         * 图片地址
          */
-        public Criteria andValueIsNotNull() {
-            addCriterion("Value is not null");
+        public Criteria andImgSrcNotBetween(String value1, String value2) {
+            addCriterion("ImgSrc not between", value1, value2, "imgSrc");
             return (Criteria) this;
         }
 
         /**
-         * 配置值
+         * 标题
          */
-        public Criteria andValueEqualTo(String value) {
-            addCriterion("Value =", value, "value", false);
+        public Criteria andTitleIsNull() {
+            addCriterion("Title is null");
             return (Criteria) this;
         }
 
         /**
-         * 配置值
+         * 标题
          */
-        public Criteria andValueNotEqualTo(String value) {
-            addCriterion("Value <>", value, "value", false);
+        public Criteria andTitleIsNotNull() {
+            addCriterion("Title is not null");
             return (Criteria) this;
         }
 
         /**
-         * 配置值
+         * 标题
          */
-        public Criteria andValueGreaterThan(String value) {
-            addCriterion("Value >", value, "value", false);
+        public Criteria andTitleEqualTo(String value) {
+            addCriterion("Title =", value, "title", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置值
+         * 标题
          */
-        public Criteria andValueGreaterThanOrEqualTo(String value) {
-            addCriterion("Value >=", value, "value", false);
+        public Criteria andTitleNotEqualTo(String value) {
+            addCriterion("Title <>", value, "title", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置值
+         * 标题
          */
-        public Criteria andValueLessThan(String value) {
-            addCriterion("Value <", value, "value", false);
+        public Criteria andTitleGreaterThan(String value) {
+            addCriterion("Title >", value, "title", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置值
+         * 标题
          */
-        public Criteria andValueLessThanOrEqualTo(String value) {
-            addCriterion("Value <=", value, "value", false);
+        public Criteria andTitleGreaterThanOrEqualTo(String value) {
+            addCriterion("Title >=", value, "title", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置值
+         * 标题
          */
-        public Criteria andValueLike(String value) {
-            addCriterion("Value like", value, "value", false);
+        public Criteria andTitleLessThan(String value) {
+            addCriterion("Title <", value, "title", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置值
+         * 标题
          */
-        public Criteria andValueNotLike(String value) {
-            addCriterion("Value not like", value, "value", false);
+        public Criteria andTitleLessThanOrEqualTo(String value) {
+            addCriterion("Title <=", value, "title", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置值
+         * 标题
          */
-        public Criteria andValueIn(List<String> values) {
-            addCriterion("Value in", values, "value", false);
+        public Criteria andTitleLike(String value) {
+            addCriterion("Title like", value, "title", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置值
+         * 标题
          */
-        public Criteria andValueNotIn(List<String> values) {
-            addCriterion("Value not in", values, "value", false);
+        public Criteria andTitleNotLike(String value) {
+            addCriterion("Title not like", value, "title", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置值
+         * 标题
          */
-        public Criteria andValueBetween(String value1, String value2) {
-            addCriterion("Value between", value1, value2, "value");
+        public Criteria andTitleIn(List<String> values) {
+            addCriterion("Title in", values, "title", false);
             return (Criteria) this;
         }
 
         /**
-         * 配置值
+         * 标题
          */
-        public Criteria andValueNotBetween(String value1, String value2) {
-            addCriterion("Value not between", value1, value2, "value");
+        public Criteria andTitleNotIn(List<String> values) {
+            addCriterion("Title not in", values, "title", false);
             return (Criteria) this;
         }
 
         /**
-         * 状态
+         * 标题
+         */
+        public Criteria andTitleBetween(String value1, String value2) {
+            addCriterion("Title between", value1, value2, "title");
+            return (Criteria) this;
+        }
+
+        /**
+         * 标题
+         */
+        public Criteria andTitleNotBetween(String value1, String value2) {
+            addCriterion("Title not between", value1, value2, "title");
+            return (Criteria) this;
+        }
+
+        /**
+         * 内容
+         */
+        public Criteria andContentIsNull() {
+            addCriterion("Content is null");
+            return (Criteria) this;
+        }
+
+        /**
+         * 内容
+         */
+        public Criteria andContentIsNotNull() {
+            addCriterion("Content is not null");
+            return (Criteria) this;
+        }
+
+        /**
+         * 内容
+         */
+        public Criteria andContentEqualTo(String value) {
+            addCriterion("Content =", value, "content", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 内容
+         */
+        public Criteria andContentNotEqualTo(String value) {
+            addCriterion("Content <>", value, "content", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 内容
+         */
+        public Criteria andContentGreaterThan(String value) {
+            addCriterion("Content >", value, "content", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 内容
+         */
+        public Criteria andContentGreaterThanOrEqualTo(String value) {
+            addCriterion("Content >=", value, "content", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 内容
+         */
+        public Criteria andContentLessThan(String value) {
+            addCriterion("Content <", value, "content", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 内容
+         */
+        public Criteria andContentLessThanOrEqualTo(String value) {
+            addCriterion("Content <=", value, "content", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 内容
+         */
+        public Criteria andContentLike(String value) {
+            addCriterion("Content like", value, "content", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 内容
+         */
+        public Criteria andContentNotLike(String value) {
+            addCriterion("Content not like", value, "content", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 内容
+         */
+        public Criteria andContentIn(List<String> values) {
+            addCriterion("Content in", values, "content", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 内容
+         */
+        public Criteria andContentNotIn(List<String> values) {
+            addCriterion("Content not in", values, "content", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 内容
+         */
+        public Criteria andContentBetween(String value1, String value2) {
+            addCriterion("Content between", value1, value2, "content");
+            return (Criteria) this;
+        }
+
+        /**
+         * 内容
+         */
+        public Criteria andContentNotBetween(String value1, String value2) {
+            addCriterion("Content not between", value1, value2, "content");
+            return (Criteria) this;
+        }
+
+        /**
+         * 文章状态
          */
         public Criteria andStatusIsNull() {
             addCriterion("Status is null");
@@ -796,7 +929,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 状态
+         * 文章状态
          */
         public Criteria andStatusIsNotNull() {
             addCriterion("Status is not null");
@@ -804,7 +937,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 状态
+         * 文章状态
          */
         public Criteria andStatusEqualTo(Integer value) {
             addCriterion("Status =", value, "status", false);
@@ -812,7 +945,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 状态
+         * 文章状态
          */
         public Criteria andStatusNotEqualTo(Integer value) {
             addCriterion("Status <>", value, "status", false);
@@ -820,7 +953,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 状态
+         * 文章状态
          */
         public Criteria andStatusGreaterThan(Integer value) {
             addCriterion("Status >", value, "status", false);
@@ -828,7 +961,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 状态
+         * 文章状态
          */
         public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
             addCriterion("Status >=", value, "status", false);
@@ -836,7 +969,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 状态
+         * 文章状态
          */
         public Criteria andStatusLessThan(Integer value) {
             addCriterion("Status <", value, "status", false);
@@ -844,7 +977,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 状态
+         * 文章状态
          */
         public Criteria andStatusLessThanOrEqualTo(Integer value) {
             addCriterion("Status <=", value, "status", false);
@@ -852,7 +985,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 状态
+         * 文章状态
          */
         public Criteria andStatusIn(List<Integer> values) {
             addCriterion("Status in", values, "status", false);
@@ -860,7 +993,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 状态
+         * 文章状态
          */
         public Criteria andStatusNotIn(List<Integer> values) {
             addCriterion("Status not in", values, "status", false);
@@ -868,7 +1001,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 状态
+         * 文章状态
          */
         public Criteria andStatusBetween(Integer value1, Integer value2) {
             addCriterion("Status between", value1, value2, "status");
@@ -876,7 +1009,7 @@ public class MannaRecordExample {
         }
 
         /**
-         * 状态
+         * 文章状态
          */
         public Criteria andStatusNotBetween(Integer value1, Integer value2) {
             addCriterion("Status not between", value1, value2, "status");
@@ -1077,8 +1210,8 @@ public class MannaRecordExample {
     }
 
     /**
-     * manna表
-     *T_Manna_Record
+     * 文章表
+     *t_article
      */
     public static class Criteria extends GeneratedCriteria {
 
@@ -1088,8 +1221,8 @@ public class MannaRecordExample {
     }
 
     /**
-     * manna表
-     * T_Manna_Record
+     * 文章表
+     * t_article
      */
     public static class Criterion {
         private boolean isBinary;
@@ -1203,8 +1336,8 @@ public class MannaRecordExample {
     }
 
     /**
-     * manna表
-     *T_Manna_Record
+     * 文章表
+     *t_article
      */
     public static class OrderBy {
         private List<OrderByPair> orderByPairs;
@@ -1263,8 +1396,8 @@ public class MannaRecordExample {
     }
 
     /**
-     * manna表
-     *T_Manna_Record
+     * 文章表
+     *t_article
      */
     static class OrderByPair {
         private String fieldName;

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.weishengming.mannaservice.dao.mapper.MannaRecordMapper">
-  <resultMap id="BaseResultMap" type="com.weishengming.mannaservice.dao.entities.MannaRecord">
+<mapper namespace="com.weishengming.lifeservice.dao.mapper.CollectMapper">
+  <resultMap id="BaseResultMap" type="com.weishengming.lifeservice.dao.entities.Collect">
     <id column="RecordId" jdbcType="BIGINT" property="recordId" />
-    <result column="Type" jdbcType="INTEGER" property="type" />
-    <result column="Code" jdbcType="VARCHAR" property="code" />
-    <result column="Name" jdbcType="VARCHAR" property="name" />
-    <result column="Value" jdbcType="VARCHAR" property="value" />
+    <result column="ArticleId" jdbcType="VARCHAR" property="articleId" />
+    <result column="UserId" jdbcType="VARCHAR" property="userId" />
     <result column="Status" jdbcType="INTEGER" property="status" />
     <result column="CreateTime" jdbcType="TIMESTAMP" property="createTime" />
     <result column="LastModifyTime" jdbcType="TIMESTAMP" property="lastModifyTime" />
@@ -98,7 +96,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    RecordId, Type, Code, Name, Value, Status, CreateTime, LastModifyTime
+    RecordId, ArticleId, UserId, Status, CreateTime, LastModifyTime
   </sql>
   <select id="selectByExample" parameterType="map" resultMap="BaseResultMap">
     select
@@ -106,7 +104,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from T_Manna_Record
+    from t_collect
     <if test="example != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -124,15 +122,15 @@
   <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from T_Manna_Record
+    from t_collect
     where RecordId = #{recordId,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="map">
-    delete from T_Manna_Record
+    delete from t_collect
     where RecordId = #{recordId,jdbcType=BIGINT}
   </delete>
   <delete id="deleteByExample" parameterType="map">
-    delete from T_Manna_Record
+    delete from t_collect
     <if test="example != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -148,12 +146,12 @@
         </otherwise>
       </choose>
     </selectKey>
-    insert into T_Manna_Record (Type, Code, Name, 
-      Value, Status, CreateTime, 
-      LastModifyTime)
-    values (#{record.type,jdbcType=INTEGER}, #{record.code,jdbcType=VARCHAR}, #{record.name,jdbcType=VARCHAR}, 
-      #{record.value,jdbcType=VARCHAR}, #{record.status,jdbcType=INTEGER}, #{record.createTime,jdbcType=TIMESTAMP}, 
-      #{record.lastModifyTime,jdbcType=TIMESTAMP})
+    insert into t_collect (ArticleId, UserId, 
+      Status, CreateTime, LastModifyTime
+      )
+    values (#{record.articleId,jdbcType=VARCHAR}, #{record.userId,jdbcType=VARCHAR}, 
+      #{record.status,jdbcType=INTEGER}, #{record.createTime,jdbcType=TIMESTAMP}, #{record.lastModifyTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="map">
     <selectKey keyProperty="record.recordId" order="AFTER" resultType="java.lang.Long">
@@ -166,19 +164,13 @@
         </otherwise>
       </choose>
     </selectKey>
-    insert into T_Manna_Record
+    insert into t_collect
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="record.type != null">
-        Type,
+      <if test="record.articleId != null">
+        ArticleId,
       </if>
-      <if test="record.code != null">
-        Code,
-      </if>
-      <if test="record.name != null">
-        Name,
-      </if>
-      <if test="record.value != null">
-        Value,
+      <if test="record.userId != null">
+        UserId,
       </if>
       <if test="record.status != null">
         Status,
@@ -191,17 +183,11 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="record.type != null">
-        #{record.type,jdbcType=INTEGER},
+      <if test="record.articleId != null">
+        #{record.articleId,jdbcType=VARCHAR},
       </if>
-      <if test="record.code != null">
-        #{record.code,jdbcType=VARCHAR},
-      </if>
-      <if test="record.name != null">
-        #{record.name,jdbcType=VARCHAR},
-      </if>
-      <if test="record.value != null">
-        #{record.value,jdbcType=VARCHAR},
+      <if test="record.userId != null">
+        #{record.userId,jdbcType=VARCHAR},
       </if>
       <if test="record.status != null">
         #{record.status,jdbcType=INTEGER},
@@ -215,28 +201,22 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="map" resultType="java.lang.Integer">
-    select count(*) from T_Manna_Record
+    select count(*) from t_collect
     <if test="example != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update T_Manna_Record
+    update t_collect
     <set>
       <if test="record.recordId != null">
         RecordId = #{record.recordId,jdbcType=BIGINT},
       </if>
-      <if test="record.type != null">
-        Type = #{record.type,jdbcType=INTEGER},
+      <if test="record.articleId != null">
+        ArticleId = #{record.articleId,jdbcType=VARCHAR},
       </if>
-      <if test="record.code != null">
-        Code = #{record.code,jdbcType=VARCHAR},
-      </if>
-      <if test="record.name != null">
-        Name = #{record.name,jdbcType=VARCHAR},
-      </if>
-      <if test="record.value != null">
-        Value = #{record.value,jdbcType=VARCHAR},
+      <if test="record.userId != null">
+        UserId = #{record.userId,jdbcType=VARCHAR},
       </if>
       <if test="record.status != null">
         Status = #{record.status,jdbcType=INTEGER},
@@ -253,12 +233,10 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update T_Manna_Record
+    update t_collect
     set RecordId = #{record.recordId,jdbcType=BIGINT},
-      Type = #{record.type,jdbcType=INTEGER},
-      Code = #{record.code,jdbcType=VARCHAR},
-      Name = #{record.name,jdbcType=VARCHAR},
-      Value = #{record.value,jdbcType=VARCHAR},
+      ArticleId = #{record.articleId,jdbcType=VARCHAR},
+      UserId = #{record.userId,jdbcType=VARCHAR},
       Status = #{record.status,jdbcType=INTEGER},
       CreateTime = #{record.createTime,jdbcType=TIMESTAMP},
       LastModifyTime = #{record.lastModifyTime,jdbcType=TIMESTAMP}
@@ -267,19 +245,13 @@
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="map">
-    update T_Manna_Record
+    update t_collect
     <set>
-      <if test="record.type != null">
-        Type = #{record.type,jdbcType=INTEGER},
+      <if test="record.articleId != null">
+        ArticleId = #{record.articleId,jdbcType=VARCHAR},
       </if>
-      <if test="record.code != null">
-        Code = #{record.code,jdbcType=VARCHAR},
-      </if>
-      <if test="record.name != null">
-        Name = #{record.name,jdbcType=VARCHAR},
-      </if>
-      <if test="record.value != null">
-        Value = #{record.value,jdbcType=VARCHAR},
+      <if test="record.userId != null">
+        UserId = #{record.userId,jdbcType=VARCHAR},
       </if>
       <if test="record.status != null">
         Status = #{record.status,jdbcType=INTEGER},
@@ -294,11 +266,9 @@
     where RecordId = #{record.recordId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="map">
-    update T_Manna_Record
-    set Type = #{record.type,jdbcType=INTEGER},
-      Code = #{record.code,jdbcType=VARCHAR},
-      Name = #{record.name,jdbcType=VARCHAR},
-      Value = #{record.value,jdbcType=VARCHAR},
+    update t_collect
+    set ArticleId = #{record.articleId,jdbcType=VARCHAR},
+      UserId = #{record.userId,jdbcType=VARCHAR},
       Status = #{record.status,jdbcType=INTEGER},
       CreateTime = #{record.createTime,jdbcType=TIMESTAMP},
       LastModifyTime = #{record.lastModifyTime,jdbcType=TIMESTAMP}

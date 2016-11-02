@@ -23,7 +23,7 @@
 		<!-- <javaTypeResolver> <property name="forceBigDecimals" value="true" /> </javaTypeResolver> -->
 
 		<!-- model配置 -->
-		<javaModelGenerator targetPackage="com.weishengming.userservice.dao.entities" targetProject="./MyBatisCode">
+		<javaModelGenerator targetPackage="com.weishengming.lifeservice.dao.entities" targetProject="./MyBatisCode">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="false" />
 			<fieldAnnotation name="jsonDeserializer" value="com.fasterxml.jackson.databind.annotation.JsonSerialize(using = JacksonDateTimeSerializer.class)" importType="com.weishengming.utils.jackson.JacksonDateTimeSerializer" targetType="java.util.Date"/>
@@ -31,14 +31,14 @@
 		</javaModelGenerator>
 
 		<!-- xml配置文件 -->
-		<sqlMapGenerator targetPackage="com.weishengming.userservice.dao.xml" targetProject="./MyBatisCode">
+		<sqlMapGenerator targetPackage="com.weishengming.lifeservice.dao.xml" targetProject="./MyBatisCode">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 
 		<!--接口 -->
-		<javaClientGenerator type="XMLMAPPER" targetPackage="com.weishengming.userservice.dao.mapper" targetProject="./MyBatisCode">
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.weishengming.lifeservice.dao.mapper" targetProject="./MyBatisCode">
 			<property name="enableSubPackages" value="true" />
-			<modifyDbAnnotation name="masterDataSource" value="com.weishengming.userservice.datasources.annotations.MasterDataSource"/>
+			<modifyDbAnnotation name="masterDataSource" value="com.weishengming.lifeservice.datasources.annotations.MasterDataSource"/>
 		</javaClientGenerator>
 
 		<!-- tableName是要生成映射的表明， domainObjectName是生成映射的实体类名 -->
@@ -49,7 +49,17 @@
 			<generatedKey column="RecordId" sqlStatement="MySql" identity="true" />
 		</table>
 		-->
-		<table tableName="t_user" domainObjectName="User">
+
+		<table tableName="t_article" domainObjectName="Article">
+			<generatedKey column="RecordId" sqlStatement="MySql" identity="true" />
+		</table>
+		<table tableName="t_collect" domainObjectName="Collect">
+			<generatedKey column="RecordId" sqlStatement="MySql" identity="true" />
+		</table>
+		<table tableName="t_comment" domainObjectName="Comment">
+			<generatedKey column="RecordId" sqlStatement="MySql" identity="true" />
+		</table>
+		<table tableName="t_read" domainObjectName="Read">
 			<generatedKey column="RecordId" sqlStatement="MySql" identity="true" />
 		</table>
 
